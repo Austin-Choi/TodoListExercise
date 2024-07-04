@@ -26,3 +26,8 @@ inputButton.addEventListener("click", () => {
     alert("다시 입력하세요.");
   }
 });
+
+const deleteAllButton = document.getElementById("delete-all-button");
+deleteAllButton.addEventListener("click", () => {
+  localStorage.clear();
+});
