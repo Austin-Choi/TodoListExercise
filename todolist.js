@@ -84,7 +84,8 @@ const initTodos = () => {
 };
 document.addEventListener("DOMContentLoaded", initTodos);
 
-inputButton.addEventListener("click", () => {
+//함수로 따로 빼서 지정하기
+const addTodo = () => {
   const todoText = inputField.value.trim();
   if (todoText !== "") {
     const id = saveTodo(todoText);
@@ -97,7 +98,11 @@ inputButton.addEventListener("click", () => {
   } else {
     alert("다시 입력하세요.");
   }
-});
+};
+inputButton.addEventListener("click", addTodo);
+
+//유닛 테스트
+//document 객체를 mocking 해서 테스트가 가능하게 구현해보기
 
 //모두 삭제하는 기능
 //에러: 로컬스토리지만 지워지고 보이는건 안사라짐
