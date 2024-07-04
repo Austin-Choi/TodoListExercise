@@ -48,7 +48,7 @@ const removeTodo = (id) => {
 const renderTodo = (todoText, id) => {
   const todoItem = document.createElement("li");
   todoItem.textContent = todoText;
-  todoItem.className = "todoItem";
+  todoItem.className = "todo-item";
 
   const todoItemCheckbox = document.createElement("input");
   todoItemCheckbox.type = "checkbox";

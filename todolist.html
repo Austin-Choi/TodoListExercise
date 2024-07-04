@@ -6,17 +6,17 @@
         <title>TodoList Exercise</title>
     </head>
     <body>
-        <header>
+        <header class="todo-input-title">
             <h2>오늘 할일 정하기!</h2>
         </header>
         <main>
-            <section>
+            <section class="todo-input-form">
                 <input id="todo-input-text" name="todo-input-text" type="text"/>
-                <button id="todo-input-button" type="button">입력</button>
+                <button class="todo-button" id="todo-input-button" type="button">입력</button>
             </section>
-            <article>
-                <h4>할일 목록</h4>
-                <button id="delete-all-button" type="button">모두 삭제하기</button>
+            <article id="todo-show-area">
+                <h2>할일 목록</h2>
+                <button class="todo-button" id="delete-all-button" type="button">모두 삭제</button>
                 <ul id="todos">
                     
                 </ul>
