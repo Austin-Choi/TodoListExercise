@@ -72,3 +72,5 @@ const deleteAllButton = document.getElementById("delete-all-button");
 deleteAllButton.addEventListener("click", () => {
   localStorage.removeItem("todos");
 });
+
+module.exports = { saveTodo, removeTodo };
