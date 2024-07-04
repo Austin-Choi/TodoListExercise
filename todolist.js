@@ -11,8 +11,9 @@ const todos = document.getElementById("todos");
 const saveTodo = (todoText) => {
   //파싱에 실패하면 에러 내용 콘솔에 기록하고
   //-1을 반환해 alert창 띄움
+  let todos;
   try {
-    const todos = JSON.parse(localStorage.getItem("todos")) || [];
+    todos = JSON.parse(localStorage.getItem("todos")) || [];
   } catch (error) {
     console.error(
       "LocalStorage에서 todo를 parsing하는 중 오류가 발생했습니다.",
@@ -72,5 +73,3 @@ const deleteAllButton = document.getElementById("delete-all-button");
 deleteAllButton.addEventListener("click", () => {
   localStorage.removeItem("todos");
 });
-
-module.exports = { saveTodo, removeTodo };
