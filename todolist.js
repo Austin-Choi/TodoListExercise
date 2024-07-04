@@ -9,7 +9,17 @@ const todos = document.getElementById("todos");
 //JSON으로 묶어서 todos 배열에 push함
 //다시 로컬 스토리지에 todos 배열 저장
 const saveTodo = (todoText) => {
-  const todos = JSON.parse(localStorage.getItem("todos")) || []; //try catch 정상적으로 파싱에 실패했을때 어떻게 할지?
+  //파싱에 실패하면 에러 내용 콘솔에 기록하고
+  //-1을 반환해 alert창 띄움
+  try {
+    const todos = JSON.parse(localStorage.getItem("todos")) || [];
+  } catch (error) {
+    console.error(
+      "LocalStorage에서 todo를 parsing하는 중 오류가 발생했습니다.",
+      error
+    );
+    return -1;
+  }
   const id = Date.now().toString();
   todos.push({ todoText, id });
   localStorage.setItem("todos", JSON.stringify(todos));
@@ -29,6 +39,10 @@ inputButton.addEventListener("click", () => {
   const todoText = inputField.value.trim();
   if (todoText !== "") {
     const id = saveTodo(todoText);
+    if (id === -1) {
+      alert("할일을 저장하던 중 오류가 발생했습니다.");
+      return;
+    }
     const todoItem = document.createElement("li");
     todoItem.textContent = todoText;
     todoItem.className = "todoItem";
