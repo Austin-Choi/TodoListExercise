@@ -2,12 +2,14 @@ const inputField = document.getElementById("todo-input-text");
 const inputButton = document.getElementById("todo-input-button");
 const todos = document.getElementById("todos");
 
+//함수 단위로 테스트해보자.
+
 //입력받은 텍스트를 생성일자로 된 id를 생성하고
 //로컬 스토리지에서 todos를 불러옴
 //JSON으로 묶어서 todos 배열에 push함
 //다시 로컬 스토리지에 todos 배열 저장
 const saveTodo = (todoText) => {
-  const todos = JSON.parse(localStorage.getItem("todos")) || [];
+  const todos = JSON.parse(localStorage.getItem("todos")) || []; //try catch 정상적으로 파싱에 실패했을때 어떻게 할지?
   const id = Date.now().toString();
   todos.push({ todoText, id });
   localStorage.setItem("todos", JSON.stringify(todos));
