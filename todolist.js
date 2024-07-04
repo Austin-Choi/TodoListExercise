@@ -14,6 +14,15 @@ const saveTodo = (todoText) => {
   return id;
 };
 
+//생성일자로 구성된 id를 받아와서
+//로컬스토리지에 저장된 {할일, 날짜} 배열?에서 해당 id값이 아닌 것들만 추림
+//다시 추려진 todo를 저장
+const removeTodo = (id) => {
+  let todos = JSON.parse(localStorage.getItem("todos")) || [];
+  todos = todos.filter((todo) => todo.id !== id);
+  localStorage.setItem("todos", JSON.stringify(todos));
+};
+
 inputButton.addEventListener("click", () => {
   const todoText = inputField.value.trim();
   if (todoText !== "") {
@@ -29,6 +38,7 @@ inputButton.addEventListener("click", () => {
       if (todoItemCheckbox.checked) {
         todoItem.remove();
         todoItemCheckbox.remove();
+        removeTodo(id);
       }
     });
 
@@ -39,4 +49,10 @@ inputButton.addEventListener("click", () => {
   } else {
     alert("다시 입력하세요.");
   }
+});
+
+//모두 삭제하는 기능
+const deleteAllButton = document.getElementById("delete-all-button");
+deleteAllButton.addEventListener("click", () => {
+  localStorage.removeItem("todos");
 });
