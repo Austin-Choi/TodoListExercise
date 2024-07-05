@@ -14,8 +14,6 @@ var inputField = document.getElementById("todo-input-text");
 var inputButton = document.getElementById("todo-input-button");
 var todos = document.getElementById("todos");
 
-//함수 단위로 테스트해보자.
-
 //입력받은 텍스트를 생성일자로 된 id를 생성하고
 //로컬 스토리지에서 todos를 불러옴
 //JSON으로 묶어서 todos 배열에 push함
@@ -27,13 +25,16 @@ var saveTodo = function saveTodo(todoText) {
   try {
     todos = JSON.parse(localStorage.getItem("todos")) || [];
   } catch (error) {
-    console.error("LocalStorage에서 todo를 parsing하는 중 오류가 발생했습니다.", error);
+    console.error(
+      "LocalStorage에서 todo를 parsing하는 중 오류가 발생했습니다.",
+      error
+    );
     return -1;
   }
   var id = Date.now().toString();
   todos.push({
     todoText: todoText,
-    id: id
+    id: id,
   });
   localStorage.setItem("todos", JSON.stringify(todos));
   return id;
@@ -47,7 +48,10 @@ var removeTodo = function removeTodo(id) {
   try {
     todos = JSON.parse(localStorage.getItem("todos")) || [];
   } catch (error) {
-    console.error("LocalStorage에서 todo를 parsing하는 중 오류가 발생했습니다.", error);
+    console.error(
+      "LocalStorage에서 todo를 parsing하는 중 오류가 발생했습니다.",
+      error
+    );
     return;
   }
   todos = todos.filter(function (todo) {
@@ -59,8 +63,10 @@ var renderTodo = function renderTodo(todoText, id) {
   var todoItem = document.createElement("li");
   todoItem.textContent = todoText;
   todoItem.className = "todo-item";
+
   var todoItemCheckbox = document.createElement("input");
   todoItemCheckbox.type = "checkbox";
+
   todoItemCheckbox.addEventListener("change", function () {
     if (todoItemCheckbox.checked) {
       todoItem.remove();
@@ -79,7 +85,10 @@ var initTodos = function initTodos() {
   try {
     todos = JSON.parse(localStorage.getItem("todos")) || [];
   } catch (error) {
-    console.error("LocalStorage에서 todo를 parsing하는 중 오류가 발생했습니다.", error);
+    console.error(
+      "LocalStorage에서 todo를 parsing하는 중 오류가 발생했습니다.",
+      error
+    );
     todos = [];
   }
   todos.forEach(function (todo) {
@@ -107,9 +116,6 @@ window.addEventListener("DOMContentLoaded", function (event) {
   if (inputButton) inputButton.addEventListener("click", addTodo);
 });
 
-//유닛 테스트
-//document 객체를 mocking 해서 테스트가 가능하게 구현해보기
-
 //모두 삭제하는 기능
 //에러: 로컬스토리지만 지워지고 보이는건 안사라짐
 //해결: ul인 todos 에서 firstChild가 존재할 때
@@ -123,14 +129,17 @@ var removeAllTodos = function removeAllTodos() {
   }
   localStorage.removeItem("todos");
 };
+
 window.addEventListener("DOMContentLoaded", function (event) {
-  if (deleteAllButton) deleteAllButton.addEventListener("click", removeAllTodos);
+  if (deleteAllButton)
+    deleteAllButton.addEventListener("click", removeAllTodos);
 });
+
 module.exports = {
   saveTodo: saveTodo,
   removeTodo: removeTodo,
   renderTodo: renderTodo,
   initTodos: initTodos,
   addTodo: addTodo,
-  removeAllTodos: removeAllTodos
+  removeAllTodos: removeAllTodos,
 };
