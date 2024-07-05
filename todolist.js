@@ -107,9 +107,6 @@ window.addEventListener("DOMContentLoaded", (event) => {
   if (inputButton) inputButton.addEventListener("click", addTodo);
 });
 
-//유닛 테스트
-//document 객체를 mocking 해서 테스트가 가능하게 구현해보기
-
 //모두 삭제하는 기능
 //에러: 로컬스토리지만 지워지고 보이는건 안사라짐
 //해결: ul인 todos 에서 firstChild가 존재할 때
