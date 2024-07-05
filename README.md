@@ -10,6 +10,10 @@
 
 1. zip으로 압축을 풀고 todolist.html을 브라우저로 엽니다.
 
+## 스크린샷
+<img width="800" alt="스크린샷 2024-07-05 오후 5 55 29" src="https://github.com/Austin-Choi/TodoListExercise/assets/33799946/291aaa01-7a5f-461c-8b77-aa19521e912e">
+
+
 ## 구형 파이어폭스 브라우저에서의 시연 영상
 <img src="https://github.com/Austin-Choi/TodoListExercise/assets/33799946/8223d799-2f2a-4417-a7b0-150e331f299f" width="640px" height="400px"/>
 
