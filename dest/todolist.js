@@ -1,18 +1,25 @@
-"use strict";
+// "use strict";
 
-require("core-js/modules/es.array.filter.js");
-require("core-js/modules/es.array.for-each.js");
-require("core-js/modules/es.date.now.js");
-require("core-js/modules/es.date.to-json.js");
-require("core-js/modules/es.date.to-string.js");
-require("core-js/modules/es.object.keys.js");
-require("core-js/modules/es.object.to-string.js");
-require("core-js/modules/es.regexp.to-string.js");
-require("core-js/modules/es.string.trim.js");
-require("core-js/modules/web.dom-collections.for-each.js");
+// require("core-js/modules/es.array.filter.js");
+// require("core-js/modules/es.array.for-each.js");
+// require("core-js/modules/es.date.now.js");
+// require("core-js/modules/es.date.to-json.js");
+// require("core-js/modules/es.date.to-string.js");
+// require("core-js/modules/es.object.keys.js");
+// require("core-js/modules/es.object.to-string.js");
+// require("core-js/modules/es.regexp.to-string.js");
+// require("core-js/modules/es.string.trim.js");
+// require("core-js/modules/web.dom-collections.for-each.js");
+//폴리필 적용을 위한 import 문
+// import "core-js/stable";
+// import "regenerator-runtime/runtime";
+//import문이랑 require문 있으면 작동안됨 use strict랑
+
 var inputField = document.getElementById("todo-input-text");
 var inputButton = document.getElementById("todo-input-button");
 var todos = document.getElementById("todos");
+
+//함수 단위로 테스트해보자.
 
 //입력받은 텍스트를 생성일자로 된 id를 생성하고
 //로컬 스토리지에서 todos를 불러옴
@@ -63,10 +70,8 @@ var renderTodo = function renderTodo(todoText, id) {
   var todoItem = document.createElement("li");
   todoItem.textContent = todoText;
   todoItem.className = "todo-item";
-
   var todoItemCheckbox = document.createElement("input");
   todoItemCheckbox.type = "checkbox";
-
   todoItemCheckbox.addEventListener("change", function () {
     if (todoItemCheckbox.checked) {
       todoItem.remove();
@@ -129,12 +134,10 @@ var removeAllTodos = function removeAllTodos() {
   }
   localStorage.removeItem("todos");
 };
-
 window.addEventListener("DOMContentLoaded", function (event) {
   if (deleteAllButton)
     deleteAllButton.addEventListener("click", removeAllTodos);
 });
-
 module.exports = {
   saveTodo: saveTodo,
   removeTodo: removeTodo,

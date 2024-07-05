@@ -1,6 +1,7 @@
 //폴리필 적용을 위한 import 문
-import "core-js/stable";
-import "regenerator-runtime/runtime";
+// import "core-js/stable";
+// import "regenerator-runtime/runtime";
+//import문 있으면 작동안됨..
 
 const inputField = document.getElementById("todo-input-text");
 const inputButton = document.getElementById("todo-input-button");
