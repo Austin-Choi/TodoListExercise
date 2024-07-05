@@ -1,5 +1,15 @@
 "use strict";
 
+require("core-js/modules/es.array.filter.js");
+require("core-js/modules/es.array.for-each.js");
+require("core-js/modules/es.date.now.js");
+require("core-js/modules/es.date.to-json.js");
+require("core-js/modules/es.date.to-string.js");
+require("core-js/modules/es.object.keys.js");
+require("core-js/modules/es.object.to-string.js");
+require("core-js/modules/es.regexp.to-string.js");
+require("core-js/modules/es.string.trim.js");
+require("core-js/modules/web.dom-collections.for-each.js");
 var inputField = document.getElementById("todo-input-text");
 var inputButton = document.getElementById("todo-input-button");
 var todos = document.getElementById("todos");

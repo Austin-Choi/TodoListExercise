@@ -9,5 +9,9 @@
   },
   "scripts": {
     "test": "jest"
+  },
+  "dependencies": {
+    "core-js": "^3.37.1",
+    "regenerator-runtime": "^0.14.1"
   }
 }

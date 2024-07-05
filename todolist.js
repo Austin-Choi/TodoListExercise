@@ -1,3 +1,7 @@
+//폴리필 적용을 위한 import 문
+import "core-js/stable";
+import "regenerator-runtime/runtime";
+
 const inputField = document.getElementById("todo-input-text");
 const inputButton = document.getElementById("todo-input-button");
 const todos = document.getElementById("todos");
