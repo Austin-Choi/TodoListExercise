@@ -112,16 +112,18 @@ window.addEventListener("DOMContentLoaded", (event) => {
 //.removeChild 함수를 사용해 todos.firstChile 반복문으로 삭제
 const deleteAllButton = document.getElementById("delete-all-button");
 
-const deleteAllTodos = () => {
-  while (todos.firstChild) {
-    todos.removeChild(todos.firstChild);
+const removeAllTodos = () => {
+  if (todos) {
+    while (todos.firstChild) {
+      todos.removeChild(todos.firstChild);
+    }
   }
   localStorage.removeItem("todos");
 };
 
 window.addEventListener("DOMContentLoaded", (event) => {
   if (deleteAllButton)
-    deleteAllButton.addEventListener("click", deleteAllTodos);
+    deleteAllButton.addEventListener("click", removeAllTodos);
 });
 
 module.exports = {
@@ -130,5 +132,5 @@ module.exports = {
   renderTodo,
   initTodos,
   addTodo,
-  deleteAllTodos,
+  removeAllTodos,
 };

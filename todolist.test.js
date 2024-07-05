@@ -1,6 +1,6 @@
 // __tests__/todoList.test.js
 
-const { saveTodo, removeTodo } = require("./todolist");
+const { saveTodo, removeTodo, removeAllTodos } = require("./todolist");
 
 //describe: 테스트 케이스를 그룹화함.
 describe("saveTodo", () => {
@@ -37,6 +37,24 @@ describe("saveTodo", () => {
       "LocalStorage에서 todo를 parsing하는 중 오류가 발생했습니다.",
       expect.any(SyntaxError)
     );
+  });
+});
+
+describe("removeAllTodos", () => {
+  beforeEach(() => {
+    localStorage.clear();
+    jest.restoreAllMocks();
+  });
+
+  it("버튼을 눌렀을 때 localstorage가 비어있어야 합니다.", () => {
+    const initialTodos = [
+      { todoText: "Test Todo 1", id: "1" },
+      { todoText: "Test Todo 2", id: "2" },
+    ];
+    localStorage.setItem("todos", JSON.stringify(initialTodos));
+    removeAllTodos();
+    const todos = JSON.parse(localStorage.getItem("todos"));
+    expect(todos).toBe(null);
   });
 });
 
