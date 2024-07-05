@@ -12,12 +12,15 @@
 
 ## 스크린샷
 <img width="800" alt="스크린샷 2024-07-05 오후 5 55 29" src="https://github.com/Austin-Choi/TodoListExercise/assets/33799946/291aaa01-7a5f-461c-8b77-aa19521e912e">
+
 입력창에 할일을 입력하고 로컬 스토리지에 저장합니다.
 <br/>
 <img width="800" alt="스크린샷 2024-07-05 오후 5 57 56" src="https://github.com/Austin-Choi/TodoListExercise/assets/33799946/203a42f0-0da5-4665-b080-fa4a5378d0fa">
+
 완료한 할 일은 체크박스를 눌러 삭제합니다.
 <br/>
 <img width="1511" alt="스크린샷 2024-07-05 오후 5 59 34" src="https://github.com/Austin-Choi/TodoListExercise/assets/33799946/8a175d62-3e9b-4211-97c6-477087d8e34e">
+
 모두 삭제를 눌러 일괄 삭제가 가능합니다.
 <br/>
 ## 구형 파이어폭스 브라우저에서의 시연 영상
