@@ -11,5 +11,5 @@
 1. zip으로 압축을 풀고 todolist.html을 브라우저로 엽니다.
 
 ## 구형 파이어폭스 브라우저에서의 시연 영상
-<img src=![image](https://github.com/Austin-Choi/TodoListExercise/assets/33799946/56a2c1ec-8baf-4ac4-be83-5cd30ea1e3b9)/>
+<img src="https://github.com/Austin-Choi/TodoListExercise/assets/33799946/56a2c1ec-8baf-4ac4-be83-5cd30ea1e3b9"/>
 
