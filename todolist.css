@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 body {
     background-color:burlywood;
     color: white;
@@ -9,8 +16,12 @@ body {
 
 .container{
     display: block;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     height: 100vh;
     width: 50%;
     margin-top: 10%;
@@ -21,16 +32,26 @@ body {
 
 .todo-input-title{
     text-align: center;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     height: 4vh;
     margin-top: 50px;
 }
 
 .todo-input-form {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     height: 10vh;
 }
 
@@ -47,14 +68,18 @@ body {
     border: none;
     margin-bottom: 4px;
     background-color:darkgoldenrod;
-    box-shadow: 3px 3px 3px black;
-    transition-duration: 0.3s;
+    -webkit-box-shadow: 3px 3px 3px black;
+            box-shadow: 3px 3px 3px black;
+    -webkit-transition-duration: 0.3s;
+         -o-transition-duration: 0.3s;
+            transition-duration: 0.3s;
 }
 
 .todo-button:active{
     margin-left: 5px;
     margin-top: 5px;
-    box-shadow: none;
+    -webkit-box-shadow: none;
+            box-shadow: none;
 }
 
 #todo-input-text{
@@ -72,8 +97,12 @@ body {
 #todo-show-area {
     margin-top: 20px;
     margin-bottom: 20px;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     height: 60vh;
 }
 
